@@ -1,5 +1,15 @@
+import { css } from '@emotion/react';
+
+const styles = css({
+  color: 'red',
+});
 const PlayGround = () => {
-  return <button className="hover:bg-sky-700">Click me</button>;
+  return (
+    <>
+      <h1>p1입니다.</h1>
+      <button css={styles}>Click me</button>
+    </>
+  );
 };
 
 export default PlayGround;

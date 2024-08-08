@@ -1,41 +1,47 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) =>{
-  if(mode==="development"){
-    console.log("Dev")
+export default defineConfig(({ mode }) => {
+  if (mode === 'development') {
+    console.log('Dev');
     return {
-      plugins: [react()],
+      plugins: [
+        react({
+          jsxImportSource: '@emotion/react',
+        }),
+      ],
       server: {
-        port: 3000
+        port: 3000,
       },
-      
+
       build: {
-        minify: false,
+        minify: 'esbuild',
         rollupOptions: {
           output: {
             entryFileNames: `guide.js`,
-            assetFileNames: `[name].[ext]`
-          }
-        }
-      }
-    }
-  }else{
-    return {plugins: [react()],
-      server: {
-        port: 3000
+            assetFileNames: `[name].[ext]`,
+          },
+        },
       },
-    
+    };
+  } else {
+    return {
+      plugins: [react()],
+      server: {
+        port: 3000,
+      },
+
       build: {
-        minify: false,
+        minify: 'terser',
         sourcemap: false,
         rollupOptions: {
           output: {
             entryFileNames: `guide.js`,
-            assetFileNames: `[name].[ext]`
-          }
-        }
-      }}
+            assetFileNames: `[name].[ext]`,
+          },
+        },
+      },
+    };
   }
-})
+});
