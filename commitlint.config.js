@@ -35,7 +35,7 @@ const config = {
           if (ticket && ticket.trim().length > 0) {
             return [true];
           }
-          return [false, '티켓 번호가 비어있습니다'];
+          return [false, '티켓이 비어있습니다'];
         },
         'ticket-case': (parsed) => {
           const { ticket } = parsed;
@@ -43,7 +43,7 @@ const config = {
           if (ticket && ticket === ticket.toUpperCase()) {
             return [true];
           }
-          return [false, '티켓 번호는 대문자여야 합니다'];
+          return [false, '티켓 형식은 대문자여야 합니다'];
         },
         'ticket-pattern': (parsed) => {
           const { ticket } = parsed;

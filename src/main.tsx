@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'contact',
-        element: <PlayGround />,
+        element: <PlayGround2 />,
       },
     ],
   },
