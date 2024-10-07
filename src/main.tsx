@@ -15,6 +15,7 @@ const router = createBrowserRouter([
       <>
         <Outlet />
         <div>Root</div>
+        <PlayGround />
       </>
     ),
     children: [
