@@ -1,8 +1,8 @@
+import { useReducer } from 'react';
 import PlayGround from './PlayGround';
 import PlayGround2 from './PlayGround2';
-import { useReducer } from 'react';
 
-const reducerAction = (state, action) => {
+const reducerAction = (_state, action) => {
   if (action.type === 'setState') {
     return action.newValue;
   }

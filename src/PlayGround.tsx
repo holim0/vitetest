@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { useReducer } from 'react';
 
-const reducerAction = (state, action) => {
+const reducerAction = (_state, action) => {
   if (action.type === 'setState') {
     return action.newValue;
   }

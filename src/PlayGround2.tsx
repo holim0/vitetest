@@ -1,6 +1,6 @@
+import { produce } from 'immer';
 import { useState } from 'react';
 import { styled } from 'styled-components';
-import { produce } from 'immer';
 
 const Button = styled.button<{ $fontSize?: number; $primary?: boolean }>`
   background: ${(props) => (props.$primary ? '#BF4F74' : 'white')};
